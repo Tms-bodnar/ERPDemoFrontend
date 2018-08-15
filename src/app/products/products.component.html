@@ -1,5 +1,26 @@
-<h2>Products</h2>
-<div *ngFor = "let product of products">
-<p>{{product.id}}</p>
-<p>{{product.name}}</p>
+
+
+<div style = "text-align: center">
+<h3>Products admin</h3>
+<table class = "center">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor = "let product of products">
+<td>{{product.id}}</td>
+<td>{{product.name}}</td>
+<td><a routerLink="/productsAdmin" routerLinkActive='active'><button type="button">Update</button></a></td>
+<td><button type="button" (click)="deleteProduct(product.id)">Delete</button></td>
+</tr>
+</tbody>
+</table>
+<nav>
+<a routerLink="/productsAdmin" routerLinkActive='active'>New product</a>
+</nav>
 </div>
+<router-outlet></router-outlet>

@@ -1,0 +1,6 @@
+<form [formGroup]= "productsAdminForm" (ngSubmit)="productAdmin()">
+<label>Product name
+<input type="text" formControlName = "name" required placeholder="" value={{product?.name}} >
+</label>
+<button [disabled]="!productsAdminForm.valid">Submit</button>
+</form>
